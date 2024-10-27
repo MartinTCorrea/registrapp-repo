@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PrincipalPageRoutingModule } from './principal-routing.module';
 
 import { PrincipalPage } from './principal.page';
+import { UserEmailComponent } from '../components/user-email/user-email.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { PrincipalPage } from './principal.page';
     IonicModule,
     PrincipalPageRoutingModule
   ],
-  declarations: [PrincipalPage]
+  declarations: [PrincipalPage, UserEmailComponent]
 })
 export class PrincipalPageModule {}
