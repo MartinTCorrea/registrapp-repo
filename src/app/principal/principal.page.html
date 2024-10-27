@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra-custom">
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar class="barra-custom">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <div id="container">
+            <ion-title>
+              RegistrAPP <ion-icon name="analytics" id="icon-custom"></ion-icon>
+            </ion-title>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+    
+      </ion-content>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" menuId="secondMenu" contentId="content2">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list lines="none" [inset]="true">
+      <ion-item>
+        <a href="" class="link-custom" routerLink="/settings">Ajustes</a>
+      </ion-item>
+      <ion-item>
+        <a href="" class="link-custom">Información</a>
+      </ion-item>
+      <ion-item>
+        <a href="" class="link-custom2" routerLink="/home">Cerrar sesión</a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="content2"></ion-router-outlet>
+
+<ion-fab id="button-expand" slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button #fabButton class="fab-custom" (click)="animateAndNavigate()">
+    <ion-icon name="camera" class="icon-custom"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">RegistroAPP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <!-- Desde aquí -->
+  <div id="container">
+    <div class="relleno-custom">
+
+    </div>
+    <div class="ion-padding">
+
+      <h1>Bienvenido [Nombre]</h1>
+      <h3 class="subtitle-custom">Clases de hoy: {{selectedDay}}</h3>
+
+      <div>
+        <ion-card *ngFor="let clase of getClasesPorDia(selectedDay); let i = index" class="clase-container" [ngClass]="{'card-custom': i === 1}">
+          <ion-card-header>
+            <ion-card-subtitle>{{ clase.hora }}</ion-card-subtitle>
+            <ion-card-title>{{ clase.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ clase.descripcion }}
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+
+    <div class="ion-padding">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col size="6">
+            <ion-button class="custom-button" routerLink="/classes">Horario de Clases</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="custom-button">Verificar Asistencia</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="custom-button" routerLink="/settings">Ajustes Aplicación</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="custom-button">Horario de Clases</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+  </div>
+</ion-content>
+
+

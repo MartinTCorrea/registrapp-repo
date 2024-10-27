@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra-custom">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list lines="full" [inset]="true">
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="contrast-outline" size="medium"></ion-icon>
+      <ion-label>Tema</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="text-outline" size="medium"></ion-icon>
+      <ion-label>Tamaño de Fuente</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="notifications-outline" size="medium"></ion-icon>
+      <ion-label>Notificaciones Personalizadas</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="language-outline" size="medium"></ion-icon>
+      <ion-label>Idioma de la Aplicación</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="cloud-outline" size="medium"></ion-icon>
+      <ion-label>Modo de Ahorro de Datos</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    <ion-item [button]="true" detail="true">
+      <ion-icon slot="start" name="battery-charging-outline" size="medium"></ion-icon>
+      <ion-label>Modo de Ahorro de Batería</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+    
+    
+  </ion-list>
+</ion-content>

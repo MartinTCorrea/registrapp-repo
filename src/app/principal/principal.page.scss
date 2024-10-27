@@ -1,0 +1,102 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  .input-custom{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 25px;
+  }
+  
+  #custom-text{
+    margin-top: 20px;
+  }
+  
+  .icon-custom{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .barra-custom,ion-page{
+    --background: rgb(40, 173, 40);
+    size: 100%;
+  }
+  
+  ion-input {
+    --highlight-color-focused: rgb(40, 173, 40); 
+  }
+  
+  .link-custom{
+    color: rgb(40, 173, 40);
+    text-decoration: none;
+  }
+  .link-custom2{
+    color: rgb(219, 25, 25);
+    text-decoration: none;
+  }
+  
+  
+  .toggle-custom{
+    margin-top: 25px;
+  }
+  
+  .custom-button{
+    width: 100%;;
+    --background: rgb(40, 173, 40);
+  }
+  
+  .toggle-custom {
+    --ion-color-primary: rgb(40, 173, 40) !important;
+    --ion-color-primary-contrast: #ffffff !important;
+    --handle-background: rgb(40, 173, 40) !important;
+    --handle-background-checked: rgb(40, 173, 40) !important;
+    --background: #777777 !important;
+    --background-checked: rgb(27, 109, 27) !important;
+    --ion-color-primary-rgb: 27, 109, 27;
+  }
+
+  .card-custom {
+    border: 2px solid #ff5733; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+  .fab-custom{
+    --background: #ff5733;
+  }
+  
+  .relleno-custom{
+    height: 70px;
+  }
+  .overlay {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(40, 173, 40);
+    border-radius: 50%;
+    pointer-events: none;
+  }

@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra-custom">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Horarios de Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="selectedDay">
+    <ion-segment-button value="lunes">
+      <ion-label>Lu</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="martes">
+      <ion-label>Ma</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="miercoles">
+      <ion-label>Mi</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="jueves">
+      <ion-label>Ju</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="viernes">
+      <ion-label>Vi</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngFor="let clase of getClasesPorDia(selectedDay)" class="clase-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{ clase.hora }}</ion-card-subtitle>
+        <ion-card-title>{{ clase.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ clase.descripcion }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
