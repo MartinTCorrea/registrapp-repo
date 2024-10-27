@@ -1,77 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="barra-custom">
-    <div class="ion-page" id="main-content1">
-      <ion-header>
-        <ion-toolbar class="barra-custom">
-          <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <div id="container">
-            <ion-title>
-              RegistrAPP <ion-icon name="analytics" id="icon-custom"></ion-icon>
-            </ion-title>
-          </div>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-    
-      </ion-content>
-    </div>
+  <ion-toolbar>
+    <ion-title>
+      Autentificación
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-menu side="start" menuId="firstMenu" contentId="content1">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menú</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list lines="none" [inset]="true">
-      <ion-item>
-        <a href="" class="link-custom" routerLink="/settings">Ajustes</a>
-      </ion-item>
-      <ion-item>
-        <a href="" class="link-custom">Información</a>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-<ion-router-outlet id="content1"></ion-router-outlet>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">RegistroAPP</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- Desde aquí -->
-  <div id="container">
-    <div #overlay class="overlay"></div>
-    <h1>Iniciar sesión</h1>
-
-    <ion-input label="Correo electrónico" type="email" label-placement="floating" fill="outline" placeholder="Ingresar correo electrónico" class="input-custom">
-    </ion-input>
-
-    <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline"placeholder="Ingresar contraseña" class="input-custom" [maxlength]="20">
-    </ion-input>
-    
-    <div>
-      <ion-toggle [checked]="false" class="toggle-custom" labelPlacement="end">
-        Mostrar contraseña
-      </ion-toggle>
-    </div>
-
-    <ion-button class="custom-button" (click)="animateAndNavigate($event)" id="boton-anim">Iniciar sesión</ion-button>
-
-
-    <div id="custom-text">
-      <p>¿Olvidaste tu contraseña?</p>
-      <a href="" class="link-custom" routerLink="/recovery">Recuperar Contraseña</a>
-    </div>
-
-  </div>
+  <app-login></app-login>
 </ion-content>
-
-
