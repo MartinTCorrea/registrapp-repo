@@ -17,7 +17,7 @@ export class LoginComponent  implements OnInit {
 
   async login(){
     try{
-      await this.authService.login(this.email, this.password);
+      this.authService.login(this.email, this.password);
       alert("Logueado exitosamente!");
       this.router.navigate(['/principal']);
 
@@ -29,7 +29,7 @@ export class LoginComponent  implements OnInit {
   }
   async register(){
     try{
-      await this.authService.register(this.email, this.password);
+      this.authService.register(this.email, this.password);
       alert("Registrado exitosamente "+this.email)
 
     }catch(error){
