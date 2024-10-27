@@ -1,0 +1,9 @@
+<!-- src/app/components/alumno-form/alumno-form.component.html -->
+<form (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">Nombre del Alumno</ion-label>
+    <ion-input [(ngModel)]="alumno.nombre" name="nombre" required></ion-input>
+  </ion-item>
+  <ion-button expand="full" type="submit">Guardar</ion-button>
+  <ion-button expand="full" color="light" (click)="onCancel()">Cancelar</ion-button>
+</form>

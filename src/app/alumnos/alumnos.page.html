@@ -1,13 +1,18 @@
-<ion-header [translucent]="true">
+<!-- src/app/alumnos/alumnos.page.html -->
+<ion-header>
   <ion-toolbar>
-    <ion-title>alumnos</ion-title>
+    <ion-title>Alumnos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">alumnos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos$ | async">
+      {{ alumno.nombre }}
+      <ion-button (click)="editarAlumno(alumno.id)">Editar</ion-button>
+      <ion-button color="danger" (click)="borrarAlumno(alumno.id)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="agregarAlumno()">Agregar Alumno</ion-button>
 </ion-content>
