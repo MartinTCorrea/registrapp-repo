@@ -1,13 +1,12 @@
 <form (ngSubmit)="login()">
-
   <ion-item>
 		<ion-label position="floating">email</ion-label>
-		<ion-input type="email" name="email" placeholder="email" [(ngModel)]="email"></ion-input>
+		<ion-input type="email" [(ngModel)]="email" name="Email">Email</ion-input>
 	</ion-item>
 
   <ion-item>
     <ion-label position="floating">password</ion-label>
-    <ion-input type name="password" placeholder="password" ^[(ngmodel)]></ion-input>
+    <ion-input type name="password" [(ngModel)]="password" name="password">Password</ion-input>
   </ion-item>
   <br>
   <ion-button type="submit" expand="full" color="success">Loguer</ion-button>

@@ -19,7 +19,7 @@ export class LoginComponent  implements OnInit {
     try{
       await this.authService.login(this.email, this.password);
       alert("Logueado exitosamente!");
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['/principal']);
 
     }catch(error){
       console.error("Error en el login", error);
