@@ -1,31 +1,18 @@
-<div id="container-fluid">
-  <form ngSubmit="login()">
-    <div #overlay class="overlay"></div>
-    <h1>Iniciar sesión</h1>
+<form (ngSubmit)="login()">
 
-    <ion-item>
-      <ion-input label="Correo electrónico" type="email" label-placement="floating" fill="outline" placeholder="Ingresar correo electrónico" [(ngModel)]="email" class="input-custom">
-      </ion-input>
-    </ion-item>
+	<ion-item>
+		<ion-label position="floating">email</ion-label>
+		<ion-input type="email" name="email" placeholder="email" [(ngModel)]="email"></ion-input>
+	</ion-item>
 
-    <ion-item>
-      <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline"placeholder="Ingresar contraseña" [(ngModel)]="password" class="input-custom" [maxlength]="20">
-      </ion-input>
-    </ion-item>
-    
-    <div>
-      <ion-toggle [checked]="false" class="toggle-custom" labelPlacement="end">
-        Mostrar contraseña
-      </ion-toggle>
-    </div>
+  <ion-item>
+    <ion-label position="floating">password</ion-label>
+    <ion-input type name="password" placeholder="password" ^[(ngmodel)]></ion-input>
+  </ion-item>
+  <br>
+  <ion-button type="submit" expand="full" color="success">Loguer</ion-button>
 
-    <ion-button class="custom-button" id="boton-anim" type="submit">Iniciar sesión</ion-button>
-
-
-    <div id="custom-text">
-      <p>¿Olvidaste tu contraseña?</p>
-      <a href="" class="link-custom" routerLink="/recovery">Recuperar Contraseña</a>
-    </div>
   </form>
-  <ion-button class="custom-button" id="boton-anim" (click)="register()" >Registrarse</ion-button>
-</div>
+  <br>
+
+  <ion-button (click)="register()" expand="full" color="danger">Registrar</ion-button>
