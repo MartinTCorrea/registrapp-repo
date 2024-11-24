@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+  ngOnInit() {
+    document.body.classList.toggle('dark', true); // Activa siempre el modo oscuro
+  }
 }

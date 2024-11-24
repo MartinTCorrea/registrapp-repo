@@ -10,22 +10,25 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-
+import { HttpClientModule } from '@angular/common/http';
+import { UserDataService } from './services/user-data.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule,
-      IonicModule.forRoot(),
-      AppRoutingModule,
-      FormsModule,
-      AngularFireModule.initializeApp(environment.firebase),
-      AngularFirestoreModule,
-      AngularFireAuthModule,
-      
-    ],
-      
-  
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({ mode: 'md'}),
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    HttpClientModule,
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserDataService // Combine providers here
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

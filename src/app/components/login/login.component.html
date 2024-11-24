@@ -1,16 +1,45 @@
-<form (ngSubmit)="login()">
-  <ion-item>
-		<ion-label position="floating">email</ion-label>
-		<ion-input type="email" [(ngModel)]="email" name="Email">Email</ion-input>
-	</ion-item>
+<div class="container">
+  <form (ngSubmit)="login()" class="custom-form">
+    <ion-input
+      label="Correo electrónico"
+      name="email"
+      label-placement="floating"
+      fill="outline"
+      placeholder="Ingresar correo electrónico"
+      class="input-custom"
+      [(ngModel)]="email">
+    </ion-input>
 
-  <ion-item>
-    <ion-label position="floating">password</ion-label>
-    <ion-input type name="password" [(ngModel)]="password" name="password">Password</ion-input>
-  </ion-item>
-  <br>
-  <ion-button type="submit" expand="full" color="success">Loguer</ion-button>
+    <ion-input
+        label="Contraseña"
+        [type]="passwordVisible ? 'text' : 'password'"
+        name="password"
+        label-placement="floating"
+        fill="outline"
+        placeholder="Ingresar contraseña"
+        class="input-custom"
+        [(ngModel)]="password">
+    </ion-input>
+
+    <div class="toggle-container">
+      <p>¿Mostrar contraseña?</p>
+      <ion-toggle 
+        (ionChange)="togglePasswordVisibility($event)" 
+        class="toggle-custom">
+      </ion-toggle>
+    </div>
+    
+    <div class="container-grid">
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-button type="submit" class="custom-button">Ingresar</ion-button></ion-col>
+          <ion-col><ion-button (click)="register()" class="custom-button">Registrarse</ion-button></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </form>
-  <br>
 
-<ion-button (click)="register()" expand="full" color="danger">Registrar</ion-button>
+  <div id="custom-text">
+    <p>¿Olvidaste tu contraseña?</p>
+    <a href="" class="link-custom">Recuperar Contraseña</a>
+  </div>

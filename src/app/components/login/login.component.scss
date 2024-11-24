@@ -1,0 +1,103 @@
+.container {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  .custom-form .input-custom {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    --background: #2b2b2b;
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --ion-color-focused: rgb(40, 173, 40);
+    --ion-color: rgb(40, 173, 40);
+    --border-color: rgb(40, 173, 40);
+    --border-width: 3px; /* Ajusta el grosor del borde */
+}
+
+  
+  .input-custom{
+    margin-left: 10%;
+    margin-top: 25px;
+  }
+  .custom-item{
+    width: 100%;
+  }
+  
+  
+  .custom-text{
+    margin-top: 20px;
+  }
+  
+  .icon-custom{
+    width: 23px;
+    height: 23px;
+  }
+  
+  .barra-custom,ion-page{
+    --background: rgb(40, 173, 40);
+    size: 100%;
+  }
+  
+  ion-input {
+    --highlight-color-focused: rgb(40, 173, 40); /* Cambia este color por el que desees */
+  }
+  
+  .link-custom{
+    color: rgb(40, 173, 40);
+    text-decoration: none;
+  }
+  
+  .toggle-custom{
+    margin-top: 25px;
+  }
+  
+  .custom-button{
+    margin-top: 25px;
+    --background: rgb(40, 173, 40);
+    width: 100%;
+  }
+  
+  .toggle-custom {
+    --ion-color-primary: rgb(40, 173, 40) !important;
+    --ion-color-primary-contrast: #ffffff !important;
+    --handle-background: rgb(40, 173, 40) !important;
+    --handle-background-checked: rgb(40, 173, 40) !important;
+    --background: #2b2b2b !important;
+    --background-checked: rgb(27, 109, 27) !important;
+    --ion-color-primary-rgb: 27, 109, 27;
+  }
+  .container-grid{
+    width: 80%;
+    margin-left: 9%;
+    margin-right: 9%;
+  }
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el texto y el toggle */
+    gap: 8px; /* Espacio entre el texto y el toggle */
+  }
+  .toggle-container p {
+    margin-top:20px;
+  }

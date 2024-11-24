@@ -1,12 +1,51 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-     Inicio
-    </ion-title>
+  <ion-toolbar class="barra-custom">
+    <div class="ion-page" id="content1">
+      <ion-header>
+        <ion-toolbar class="barra-custom">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <div id="container">
+            <ion-title>
+              RegistrAPP <ion-icon name="analytics" id="icon-custom"></ion-icon>
+            </ion-title>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+    
+      </ion-content>
+    </div>
   </ion-toolbar>
 </ion-header>
 
+<ion-menu side="start" menuId="firstMenu" contentId="content1">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list lines="none" [inset]="true">
+      <ion-item>
+        <a href="" class="link-custom">Ajustes</a>
+      </ion-item>
+      <ion-item>
+        <a href="" class="link-custom">Información</a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="content1"></ion-router-outlet>
+
 <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">RegistrAPP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <app-login></app-login>
 </ion-content>
 

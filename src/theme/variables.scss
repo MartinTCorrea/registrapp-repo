@@ -6,3 +6,19 @@ html {
     --ion-font-family:'Outfit';
     --ion-font-size:auto;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --ion-background-color: #121212;
+      --ion-text-color: #fff;
+      // Añade las demás variables de estilo que quieras
+    }
+  }
+  
+  // Fuerza que siempre use modo oscuro
+  :root {
+    color-scheme: dark;
+  }
+  
+
+  

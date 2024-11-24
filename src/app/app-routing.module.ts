@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,28 +18,39 @@ const routes: Routes = [
   },
   {
     path: 'principal',
-    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule),
+    canActivate:[authGuard]
   },
   {
     path: 'classes',
-    loadChildren: () => import('./classes/classes.module').then( m => m.ClassesPageModule)
+    loadChildren: () => import('./classes/classes.module').then( m => m.ClassesPageModule),
+    canActivate:[authGuard]
   },
   {
     path: 'recovery',
-    loadChildren: () => import('./recovery/recovery.module').then( m => m.RecoveryPageModule)
+    loadChildren: () => import('./recovery/recovery.module').then( m => m.RecoveryPageModule),
+    canActivate:[authGuard]
   },
   {
     path: 'camera',
-    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule),
+    canActivate:[authGuard]
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate:[authGuard]
   },
   {
-    path: 'alumnos',
-    loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+    path: 'curso',
+    loadChildren: () => import('./curso/curso.module').then( m => m.CursoPageModule),
+    canActivate:[authGuard]
   },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
+    canActivate:[authGuard]
+  }
 ];
 
 @NgModule({

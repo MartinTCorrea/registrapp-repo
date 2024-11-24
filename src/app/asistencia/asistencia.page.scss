@@ -20,7 +20,7 @@
     font-size: 16px;
     line-height: 22px;
   
-    color: #8c8c8c;
+    color: #ffffff;
   
     margin: 0;
   }
@@ -33,7 +33,7 @@
     width: 80%; /* Asegura que ocupe el 80% del ancho total */
     margin: 0 auto; /* Centra el input horizontalmente */
     margin-top: 25px;
-    --background: #2b2b2b; /* Ajusta el fondo para que sea más visible */
+    --background: #ffffff; /* Ajusta el fondo para que sea más visible */
     --border-radius: 8px; /* Ajusta el borde redondeado */
     --padding-start: 16px; /* Añade padding interno para el texto */
   }
@@ -75,15 +75,39 @@
     --ion-color-primary-contrast: #ffffff !important;
     --handle-background: rgb(40, 173, 40) !important;
     --handle-background-checked: rgb(40, 173, 40) !important;
-    --background: #777777 !important;
+    --background: #ffffff !important;
     --background-checked: rgb(27, 109, 27) !important;
     --ion-color-primary-rgb: 27, 109, 27;
   }
-.custom-form .input-custom {
+  .custom-form .input-custom {
   width: 80%; /* Asegura que ocupe el 80% del ancho total */
   margin: 0 auto; /* Centra el input horizontalmente */
   margin-top: 25px;
-  --background: #2b2b2b; /* Ajusta el fondo para que sea más visible */
+  --background: #ffffff; /* Ajusta el fondo para que sea más visible */
   --border-radius: 8px; /* Ajusta el borde redondeado */
   --padding-start: 16px; /* Añade padding interno para el texto */
+  }
+
+  .calendario-pequeno {
+    max-width: 250px;  /* Establece el ancho máximo del calendario */
+    width: 100%;  /* Asegura que el input ocupe solo el espacio disponible */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    padding: 5px; /* Agrega un pequeño padding */
+  }
+  
+  ion-item {
+    --inner-padding-start: 0px;
+    --inner-padding-end: 0px;
+  }
+  
+
+/* Asegúrate de que las opciones dentro del ion-select no tengan fondo gris */
+ion-select-option {
+  --background: #ffffff;  /* Fondo blanco */
+  --color: #000000;  /* Texto negro */
+}
+
+/* Opcional: Estilo cuando se selecciona una opción */
+ion-select .select-text {
+  color: #000000;  /* Asegúrate de que el texto del select sea visible */
 }

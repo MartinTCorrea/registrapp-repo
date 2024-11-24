@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { AnimationController, MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-principal',
@@ -17,12 +18,44 @@ export class PrincipalPage implements AfterViewInit {
       clases: [
         { hora: '08:00 - 09:00', nombre: 'Matemáticas', descripcion: 'Aula 101' },
         { hora: '09:00 - 10:00', nombre: 'Historia', descripcion: 'Aula 102' },
+        { hora: '10:00 - 11:00', nombre: 'Biología', descripcion: 'Aula 103' },
+        { hora: '11:00 - 12:00', nombre: 'Química', descripcion: 'Aula 104' },
       ],
     },
     {
       dia: 'Martes',
       clases: [
         { hora: '08:00 - 09:00', nombre: 'Física', descripcion: 'Aula 103' },
+        { hora: '09:00 - 10:00', nombre: 'Inglés', descripcion: 'Aula 105' },
+        { hora: '10:00 - 11:00', nombre: 'Literatura', descripcion: 'Aula 106' },
+        { hora: '11:00 - 12:00', nombre: 'Arte', descripcion: 'Aula 107' },
+      ],
+    },
+    {
+      dia: 'Miércoles',
+      clases: [
+        { hora: '08:00 - 09:00', nombre: 'Geografía', descripcion: 'Aula 108' },
+        { hora: '09:00 - 10:00', nombre: 'Matemáticas', descripcion: 'Aula 101' },
+        { hora: '10:00 - 11:00', nombre: 'Historia', descripcion: 'Aula 102' },
+        { hora: '11:00 - 12:00', nombre: 'Deportes', descripcion: 'Gimnasio' },
+      ],
+    },
+    {
+      dia: 'Jueves',
+      clases: [
+        { hora: '08:00 - 09:00', nombre: 'Física', descripcion: 'Aula 103' },
+        { hora: '09:00 - 10:00', nombre: 'Química', descripcion: 'Aula 104' },
+        { hora: '10:00 - 11:00', nombre: 'Inglés', descripcion: 'Aula 105' },
+        { hora: '11:00 - 12:00', nombre: 'Literatura', descripcion: 'Aula 106' },
+      ],
+    },
+    {
+      dia: 'Viernes',
+      clases: [
+        { hora: '08:00 - 09:00', nombre: 'Biología', descripcion: 'Aula 103' },
+        { hora: '09:00 - 10:00', nombre: 'Geografía', descripcion: 'Aula 108' },
+        { hora: '10:00 - 11:00', nombre: 'Arte', descripcion: 'Aula 107' },
+        { hora: '11:00 - 12:00', nombre: 'Deportes', descripcion: 'Gimnasio' },
       ],
     },
   ];
@@ -30,7 +63,8 @@ export class PrincipalPage implements AfterViewInit {
   constructor(
     private animationCtrl: AnimationController,
     private menuCtrl: MenuController,
-    private router: Router
+    private router: Router,
+    private navCtrl: NavController
   ) {
     this.selectedDay = this.getDiaActual();
   }
@@ -128,5 +162,9 @@ export class PrincipalPage implements AfterViewInit {
     const diaSemana = fechaActual.getDay();
     const diaEnEspañol = diasSemana[(diaSemana + 6) % 7];
     return diaEnEspañol;
+  }
+
+  goToAsistencias() {
+    this.navCtrl.navigateForward('/asistencias'); // Navegar a la página de asistencias
   }
 }

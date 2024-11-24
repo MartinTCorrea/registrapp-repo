@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="addAsistencia()">
+    <ion-item>
+      <ion-label position="floating">Alumno</ion-label>
+      <ion-select [(ngModel)]="asistencia.alumnoId" name="alumnoId" required>
+        <ion-select-option *ngFor="let estudiante of estudiantes" [value]="estudiante.id">
+          {{ estudiante.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-text color="danger" *ngIf="errorAlumnoId">
+      <p>Por favor, selecciona un alumno.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-input
+        type="date"
+        [(ngModel)]="asistencia.fecha"
+        name="fecha"
+        [max]="fechaActual"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="errorFecha">
+      <p>Por favor, selecciona una fecha válida.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label>Presente</ion-label>
+      <ion-toggle [(ngModel)]="asistencia.presente" name="presente"></ion-toggle>
+    </ion-item>
+
+    <ion-button type="submit" expand="block">Registrar Asistencia</ion-button>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let estudiante of estudiantes">
+      <ion-label>
+        <h2>{{ estudiante.nombre }}</h2>
+        <p><strong>Días presente:</strong> {{ calcularDiasPresente(estudiante.id) }}</p>
+        <p><strong>Días de falta:</strong> {{ calcularDiasFalta(estudiante.id) }}</p>
+        <p>
+          <strong>Porcentaje de asistencia:</strong>
+          {{ calcularPorcentajeAsistencia(estudiante.id) | number: '1.0-2' }}%
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

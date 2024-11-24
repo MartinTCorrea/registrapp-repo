@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra-custom">
-    <div class="ion-page" id="main-content">
+    <div class="ion-page" id="content2">
       <ion-header>
         <ion-toolbar class="barra-custom">
           <ion-buttons slot="start">
@@ -67,7 +67,7 @@
       <app-user-email></app-user-email> 
       <h3 class="subtitle-custom">Clases de hoy: {{selectedDay}}</h3>
 
-      <div>
+      <div *ngIf="getClasesPorDia(selectedDay).length > 0; else noClases">
         <ion-card *ngFor="let clase of getClasesPorDia(selectedDay); let i = index" class="clase-container" [ngClass]="{'card-custom': i === 1}">
           <ion-card-header>
             <ion-card-subtitle>{{ clase.hora }}</ion-card-subtitle>
@@ -78,6 +78,10 @@
           </ion-card-content>
         </ion-card>
       </div>
+      
+      <ng-template #noClases>
+        <p>No hay clases hoy</p>
+      </ng-template>
     </div>
 
     <div class="ion-padding">
@@ -87,19 +91,16 @@
             <ion-button class="custom-button" routerLink="/classes">Horario de Clases</ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button class="custom-button">Verificar Asistencia</ion-button>
+            <ion-button class="custom-button" routerLink="/asistencia">Verificar Asistencia</ion-button>
           </ion-col>
           <ion-col size="6">
             <ion-button class="custom-button" routerLink="/settings">Ajustes Aplicación</ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-button class="custom-button" routerLink="/alumnos">Alumnos Curso</ion-button>
+            <ion-button class="custom-button" routerLink="/curso">Alumnos del Curso</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
 
   </div>
-</ion-content>
-
-

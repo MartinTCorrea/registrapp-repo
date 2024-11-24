@@ -1,0 +1,59 @@
+<div id="container">
+  <form (ngSubmit)="addAlumno()">
+    <ion-input 
+      label="Nombre"
+      fill="outline"
+      type="name"
+      name="nombre"
+      [(ngModel)]="alumno.nombre"
+      required
+      class="input-custom"
+      placeholder="Ingresar nombre">
+    </ion-input>
+
+    <ion-input 
+      label="Edad"
+      fill="outline"
+      type="number"
+      name="edad"
+      [(ngModel)]="alumno.edad"
+      required
+      class="input-custom"
+      placeholder="Ingresar edad">
+    </ion-input>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" style="color: red; margin-top: 10px;">
+      {{ errorMessage }}
+    </div>
+
+    <ion-button class="custom-button3" type="submit">
+      {{ isEdit ? 'Actualizar Alumno' : 'Añadir Alumno' }}
+    </ion-button>
+  </form>
+
+  <ion-list class="custom-list">
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-label>
+        <h2 class="alumno-nombre">Alumno: {{ alumno.nombre }}</h2>
+        <p>Edad: {{ alumno.edad }}</p>
+      </ion-label>
+      <ion-button
+        class="custom-button"
+        (click)="editAlumno(alumno)">
+        Editar
+      </ion-button>
+      <ion-button
+        class="custom-button-orng"
+        (click)="deleteAlumno(alumno.id!)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button
+    class="custom-button2"
+    (click)="logout()">
+    Salir
+  </ion-button>
+</div>
