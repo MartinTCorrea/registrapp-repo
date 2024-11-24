@@ -8,8 +8,15 @@
 </ion-header>
 
 <ion-content>
+  
   <div class="container">
-    <ion-icon name="checkmark-done-outline" class="icon-custom"></ion-icon>
-    <ion-button class="custom-button">Checkear asistencia</ion-button>
+    <ion-icon src="assets/icon/qr-code-svgrepo-com.svg" class="icon-custom"></ion-icon>
+    <ion-button class="custom-button" (click)="startScan()" >Escanear Qr <ion-icon slot="end" name="scan-outline"></ion-icon></ion-button>
+    <ion-item class="result" *ngIf="scanResult" lines="none">
+      <ion-label>
+        <p>Scan Result</p>
+        <div>{{scanResult}}</div>
+      </ion-label>
+    </ion-item>
   </div>
 </ion-content>

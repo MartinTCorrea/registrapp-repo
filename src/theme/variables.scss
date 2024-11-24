@@ -7,11 +7,17 @@ html {
     --ion-font-size:auto;
 }
 
+
 @media (prefers-color-scheme: dark) {
     :root {
       --ion-background-color: #121212;
       --ion-text-color: #fff;
       // Añade las demás variables de estilo que quieras
+    }
+    .barcode-scanning-active{
+      visibility: hidden;
+      --background: transparent;
+      --ion-backround-color: transparent;
     }
   }
   
@@ -20,5 +26,13 @@ html {
     color-scheme: dark;
   }
   
+body.barcode-scanning-modal{
+  visibility: hidden;
+  --background: transparent;
+  --ion-backround-color: transparent;
+}
+.barcode-scanning{ 
+  visibility: visible;
 
+}
   
