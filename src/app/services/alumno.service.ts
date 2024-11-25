@@ -19,7 +19,7 @@ export class AlumnoService {
   constructor(private firestore: AngularFirestore) {}
 
   addAlumno(alumno: Alumno): Promise<void> {
-    const id = this.firestore.createId(); 
+    const id = this.firestore.createId();
     return this.firestore.collection(this.collectionName).doc(id).set({ ...alumno, id });
   }
 

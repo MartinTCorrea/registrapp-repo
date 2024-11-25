@@ -36,17 +36,24 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
-:root {
-    color-scheme: dark;
-  }
-  
-  body {
-    --ion-background-color: #121212;
-    --ion-text-color: #fff;
-    // Puedes agregar otras variables de color oscuro aquí
-  }
-  
-  ion-content {
-    --background: #121212; // Fondo oscuro para ion-content}
-    --ion-text-color: #fff;
-  } 
+.barcode-scanning-active {
+  --ion-background-color: transparent !important;
+  background-color: transparent !important; /* Solo transparente, no oculto */
+}
+
+body.barcode-scanning-active {
+  --ion-background-color: transparent !important;
+  background: transparent !important;
+}
+
+.barcode-scanning-modal {
+  background: transparent !important;
+  --ion-background-color: transparent !important;
+}
+
+/* Asegúrate de que el modal se renderice */
+ion-modal {
+  --background: transparent !important;
+  --ion-background-color: transparent !important;
+}
+

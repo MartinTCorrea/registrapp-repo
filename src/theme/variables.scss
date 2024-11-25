@@ -1,38 +1,22 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import '@ionic/angular/css/palettes/dark.system.css';
-html {
-    --ion-font-family:'Outfit';
-    --ion-font-size:auto;
-}
-
-
 @media (prefers-color-scheme: dark) {
-    :root {
-      --ion-background-color: #121212;
-      --ion-text-color: #fff;
-      // Añade las demás variables de estilo que quieras
-    }
-    .barcode-scanning-active{
-      visibility: hidden;
-      --background: transparent;
-      --ion-backround-color: transparent;
-    }
+  .barcode-scanning-active {
+    /* NO ocultes todo con visibility: hidden */
+    --background: transparent;
+    --ion-background-color: transparent;
   }
-  
-  // Fuerza que siempre use modo oscuro
-  :root {
-    color-scheme: dark;
-  }
-  
-body.barcode-scanning-modal{
-  visibility: hidden;
-  --background: transparent;
-  --ion-backround-color: transparent;
 }
-.barcode-scanning{ 
-  visibility: visible;
 
+/* Modo oscuro obligatorio */
+:root {
+  color-scheme: dark;
 }
-  
+
+/* NO hagas que el cuerpo o la modal sean invisibles */
+body.barcode-scanning-modal {
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+.barcode-scanning {
+  visibility: visible; /* Mantén visible */
+}

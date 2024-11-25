@@ -21,8 +21,8 @@ import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-barcode-scanning',
   template: `
-    <ion-header class="ion-no-border">
-      <ion-toolbar color="tertiary">
+    <ion-header class="ion-no-border custom-header">
+      <ion-toolbar>
         <ion-buttons slot="end">
           <ion-button (click)="closeModal()">
             <ion-icon name="close"></ion-icon>
@@ -39,7 +39,7 @@ import { ModalController } from '@ionic/angular';
         horizontal="end"
         vertical="bottom"
       >
-        <ion-fab-button (click)="toggleTorch()">
+        <ion-fab-button class="custom-fab-button" (click)="toggleTorch()">
           <ion-icon name="flashlight"></ion-icon>
         </ion-fab-button>
       </ion-fab>
@@ -49,6 +49,10 @@ import { ModalController } from '@ionic/angular';
     `
       ion-content {
         --background: transparent;
+      }
+
+      .custom-header {
+        --ion-background-color: rgb(40, 173, 40); /* Color del header */
       }
 
       .square {
@@ -61,6 +65,11 @@ import { ModalController } from '@ionic/angular';
         height: 200px;
         border: 6px solid white;
         box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
+      }
+
+      .custom-fab-button {
+        --ion-background-color: #ff5733; /* Color del botón flotante */
+        --background: #ff5733; /* Respaldo para compatibilidad */
       }
     `,
   ],
