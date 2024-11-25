@@ -40,13 +40,15 @@
       </ion-label>
       <ion-button
         class="custom-button"
-        (click)="editAlumno(alumno)">
-        Editar
+        (click)="editAlumno(alumno)"
+        slot="end">
+        <ion-icon name="pencil-outline"></ion-icon>
       </ion-button>
       <ion-button
         class="custom-button-orng"
-        (click)="deleteAlumno(alumno.id!)">
-        Eliminar
+        (click)="deleteAlumno(alumno.id!)"
+        slot="end">
+        <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>

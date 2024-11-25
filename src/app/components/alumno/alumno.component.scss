@@ -132,6 +132,7 @@
     margin-right: 9%;
     margin-bottom: 25px;
     --background: rgb(40, 173, 40);
+    flex-shrink: 0;
   }
   .custom-button2{
     width:80%;
@@ -183,5 +184,7 @@
     border-radius: 5px; /* Redondea los bordes de los botones */
     padding: 6px 12px;  /* Ajusta el padding si es necesario */
   }
-  
+  .alumno-nombre{
+    flex-shrink: 1;
+  }
   
